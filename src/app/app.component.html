@@ -4,13 +4,13 @@
     <nav>
       <ul>
         <li>
-          <a routerLink="/">Home</a>
+          <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
         </li>
         <li>
-          <a routerLink="/weather">Weater</a>
+          <a routerLink="/weather" routerLinkActive="active">Weater</a>
         </li>
         <li>
-          <a routerLink="/news">News</a>
+          <a routerLink="/news" routerLinkActive="active">News</a>
         </li>
       </ul>
     </nav>

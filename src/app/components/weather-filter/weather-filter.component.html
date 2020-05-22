@@ -1,0 +1,4 @@
+<form [formGroup]="filtersForm">
+    <input type="date" class="control" (change)="dateFilter($event.target.valueAsNumber)" formControlName="date" />
+    <button (click)="resetFilter()" class="control">Reset filter</button>
+</form>

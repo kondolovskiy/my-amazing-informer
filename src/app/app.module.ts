@@ -11,6 +11,7 @@ import { NewsComponent } from './components/news/news.component';
 import { BackgroundColorDirective } from './directives/background-color.directive';
 import { LoaderComponent } from './components/loader/loader.component';
 import { HomeComponent } from './components/home/home.component';
+import { WeatherFilterComponent } from './components/weather-filter/weather-filter.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { HomeComponent } from './components/home/home.component';
     NewsComponent,
     BackgroundColorDirective,
     LoaderComponent,
-    HomeComponent
+    HomeComponent,
+    WeatherFilterComponent
   ],
   imports: [
     BrowserModule,
