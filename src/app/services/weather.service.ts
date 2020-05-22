@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
-import { pluck, tap } from 'rxjs/operators';
+import { pluck, tap, catchError } from 'rxjs/operators';
+import { throwError } from 'rxjs';
 
 import { environment } from '../../environments/environment';
 import { LoaderService } from './loader.service';
@@ -38,6 +39,10 @@ export class WeatherService {
 
     return this.http.get(url, { params }).pipe(
       tap(() => this.loader.isLoaded()),
+      catchError((error) => {
+        this.loader.isLoaded();
+        return throwError(error);
+      }),
       pluck('list')
     );
   }

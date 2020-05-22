@@ -20,7 +20,9 @@ export class WeatherComponent implements OnInit {
 
   error: string;
 
- 
+  min = this.getMinDate();
+
+  max = this.getMaxDate();
 
   constructor(
     private weatherService: WeatherService,
@@ -54,11 +56,23 @@ export class WeatherComponent implements OnInit {
     const timeTomorrow = tomorrow.getTime() / 1000;
     const timeYesterday = yesterday.getTime() / 1000;
 
-    this.filteredList = this.weatherList.filter(weather => weather.dt > timeYesterday && weather.dt < timeTomorrow)
+    this.filteredList = this.weatherList.filter(weather => weather.dt >= timeYesterday && weather.dt <= timeTomorrow)
   }
 
   resetFilter() {
     this.filteredList = this.weatherList;
   }
+
+  private getMinDate() {
+    return Date.now();
+  }
+
+  private getMaxDate() {
+    const date = new Date();
+    date.setDate(date.getDate() + 5);
+
+    return date.getTime();
+  }
+    
 
 }

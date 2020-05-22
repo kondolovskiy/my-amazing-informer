@@ -4,12 +4,16 @@
     <app-loader *ngIf="isLoading; else loaded"></app-loader>
 
     <ng-template #loaded>
-        <div class="error" *ngIf="error">{{ error }}</div>
-
+        
         <app-weather-filter 
             (onDateFilter)="dateFilter($event)"
             (onResetFilter)="resetFilter()"
+            [min]="min | date:'y-MM-d'"
+            [max]="max | date:'y-MM-d'"
+            class="filters"
         ></app-weather-filter>
+
+        <app-error *ngIf="error">{{ error }}</app-error>
         
         <div class="weather">
             

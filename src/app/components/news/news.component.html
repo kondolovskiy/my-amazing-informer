@@ -15,7 +15,7 @@
     <app-loader *ngIf="isLoading; else loaded"></app-loader>
 
     <ng-template #loaded>
-        <div class="error" *ngIf="error">{{ error }}</div>
+        <app-error *ngIf="error">{{ error }}</app-error>
 
         <ng-container *ngIf="news; else notNews">
             <article *ngFor="let article of news" appBackgroundColor="#ededed">

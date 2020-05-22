@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
@@ -15,6 +15,10 @@ export class WeatherFilterComponent implements OnInit {
   @Output() onDateFilter = new EventEmitter<number>();
 
   @Output() onResetFilter = new EventEmitter<boolean>();
+
+  @Input() min;
+
+  @Input() max;
 
   constructor() { }
 

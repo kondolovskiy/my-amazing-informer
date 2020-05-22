@@ -12,6 +12,7 @@ import { BackgroundColorDirective } from './directives/background-color.directiv
 import { LoaderComponent } from './components/loader/loader.component';
 import { HomeComponent } from './components/home/home.component';
 import { WeatherFilterComponent } from './components/weather-filter/weather-filter.component';
+import { ErrorComponent } from './components/error/error.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { WeatherFilterComponent } from './components/weather-filter/weather-filt
     BackgroundColorDirective,
     LoaderComponent,
     HomeComponent,
-    WeatherFilterComponent
+    WeatherFilterComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
