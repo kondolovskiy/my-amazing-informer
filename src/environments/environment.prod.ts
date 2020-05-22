@@ -1,7 +1,7 @@
 export const environment = {
   production: true,
   news: {
-    url: 'https://newsapi.org/v2/top-headlines',
+    url: 'https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/top-headlines',
     apiKey: 'ded4231aea544dfda756a8cc5be82bf3'
   },
   weather: {
