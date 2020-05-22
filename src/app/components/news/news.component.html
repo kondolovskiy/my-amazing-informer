@@ -17,7 +17,7 @@
     <ng-template #loaded>
         <app-error *ngIf="error">{{ error }}</app-error>
 
-        <ng-container *ngIf="news; else notNews">
+        <ng-container *ngIf="news; else noNews">
             <article *ngFor="let article of news" appBackgroundColor="#ededed">
                 <h3>
                     <a [href]="article.url" target="_blank">{{ article.title }}</a>
@@ -30,8 +30,8 @@
             </article>
         </ng-container>
         
-        <ng-template #notNews>
-            Not news yet...
+        <ng-template #noNews>
+            No news yet...
         </ng-template>
     </ng-template>
 

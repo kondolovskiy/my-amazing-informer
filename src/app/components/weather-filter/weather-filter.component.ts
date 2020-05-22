@@ -7,11 +7,6 @@ import { FormGroup, FormControl } from '@angular/forms';
   styleUrls: ['./weather-filter.component.scss']
 })
 export class WeatherFilterComponent implements OnInit {
-
-  filtersForm= new FormGroup({
-    date: new FormControl('')
-  });
-
   @Output() onDateFilter = new EventEmitter<number>();
 
   @Output() onResetFilter = new EventEmitter<boolean>();
@@ -19,6 +14,10 @@ export class WeatherFilterComponent implements OnInit {
   @Input() min: string;
 
   @Input() max: string;
+
+  filtersForm= new FormGroup({
+    date: new FormControl('')
+  });
 
   constructor() { }
 

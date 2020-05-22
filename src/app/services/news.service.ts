@@ -35,24 +35,24 @@ export class NewsService {
   constructor(
     private http: HttpClient,
     private loader: LoaderService
-  ) { 
+  ) {
     this.url = environment.news.url;
     this.apiKey = environment.news.apiKey;
   }
 
   getNewsList(country: Country = 'ua') {
     const params = new HttpParams()
-        .set('country', country)
-        .set('pageSize', String(this.pageSize));
+      .set('country', country)
+      .set('pageSize', String(this.pageSize));
 
     const headers = new HttpHeaders()
-                        .set('X-Api-Key', this.apiKey);
+      .set('X-Api-Key', this.apiKey);
 
     this.loader.startLoading();
 
-    return this.http.get<NewsApiResponse>(this.url, { 
-      params, 
-      headers 
+    return this.http.get<NewsApiResponse>(this.url, {
+      params,
+      headers
     })
       .pipe(
         tap(() => this.loader.isLoaded()),

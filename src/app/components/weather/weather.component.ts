@@ -14,9 +14,9 @@ export class WeatherComponent implements OnInit {
 
   filteredList: Weather[];
 
-  isLoading = false;
-
   error: string;
+
+  isLoading = false;
 
   min = this.getMinDate();
 
