@@ -12,7 +12,7 @@
         </form>
     </header>
 
-    <app-loader *ngIf="isLoading; else loaded"></app-loader>
+    <app-loader *ngIf="loader$ | async; else loaded"></app-loader>
 
     <ng-template #loaded>
         <app-error *ngIf="error">{{ error }}</app-error>

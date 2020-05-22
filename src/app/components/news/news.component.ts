@@ -3,6 +3,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 
 import { NewsService, Article, Country } from '../../services/news.service';
 import { LoaderService } from '../../services/loader.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-news',
@@ -17,7 +18,7 @@ export class NewsComponent implements OnInit {
 
   defaultCountry: Country = 'ua';
 
-  isLoading = true;
+  loader$: Observable<boolean>
 
   countriesList = [
     { code: 'ua', name: 'Ukraine' },
@@ -36,7 +37,7 @@ export class NewsComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.loaderService.loader$.subscribe(loading => this.isLoading = loading);
+    this.loader$ = this.loaderService.loader$;
 
     this.fetchNews(this.defaultCountry);
   }

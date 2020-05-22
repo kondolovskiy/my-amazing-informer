@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { WeatherService, Weather } from '../../services/weather.service';
 import { LoaderService } from '../../services/loader.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-weather',
@@ -16,7 +17,7 @@ export class WeatherComponent implements OnInit {
 
   error: string;
 
-  isLoading = false;
+  loader$: Observable<boolean>
 
   min = this.getMinDate();
 
@@ -29,7 +30,8 @@ export class WeatherComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.loaderService.loader$.subscribe(loading => this.isLoading = loading);
+    // this.loaderService.loader$.subscribe(loading => this.isLoading = loading);
+    this.loader$ = this.loaderService.loader$;
 
     this.weatherService.getWeather().subscribe(
       weather => {
