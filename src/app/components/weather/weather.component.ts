@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import { FormGroup, FormControl } from '@angular/forms';
-
 import { WeatherService, Weather } from '../../services/weather.service';
 import { LoaderService } from '../../services/loader.service';
 
