@@ -1,0 +1,15 @@
+<div>
+
+    <h2>Test app</h2>
+
+    <p>I don't know what to put here, so read an interesting fackt about Chuck Norris</p>
+
+    <div class="joke">
+        <ng-container *ngIf="joke">
+            <img [src]="joke.icon_url" alt="Chuck watch you" />
+            <p>{{ joke.value }}</p>
+            <button (click)="oneMore()">More fakts</button>
+        </ng-container>
+    </div>
+    
+</div>

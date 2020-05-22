@@ -1,0 +1,47 @@
+:host {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.2;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    > form {
+        margin-right: 2px;
+    }
+}
+
+h2 {
+    color: #333;
+}
+
+.news-item {
+    article {
+        padding: 10px 0;
+        border-bottom: 1px solid #333;
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+
+    h3 {
+        margin: 0 0 .3rem;
+    }
+
+    .author {
+        font-size: .7rem;
+        color: #666;
+    }
+
+    a {
+        color: #3136bd;   
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+

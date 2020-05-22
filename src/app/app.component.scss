@@ -1,0 +1,53 @@
+.container {
+    margin: 0;
+    padding: 0;
+
+    header {
+        display: block;
+        padding: 5px;
+        background: #3136bd;
+    }
+
+    ul {
+        list-style: none;
+        display: flex;
+        padding: 0 20px;
+        @media screen and (min-width: 1024px) {
+            padding: 0 10% 0;
+        }
+        
+    }
+
+    li {
+        margin-right: 10px;
+    }
+
+    a {
+        color: #fff;
+        font-size: 1.2rem;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    main {
+        margin: 0 auto;
+        padding: 0 20px;
+        min-height: calc(100vh - 216px);
+
+        @media screen and (min-width: 1024px) {
+            width: 80%;
+        }
+    }
+
+    footer {
+        padding: 2rem;
+        background: #3136bd;
+        text-align: center;
+        color: #fff;
+        font-size: 1rem;
+        margin-top: 50px;
+    }
+
+}

@@ -1,0 +1,40 @@
+<div class="news-item">
+    <header>
+        <h2>Top news from {{ countryName }}</h2>
+
+        <form [formGroup]="countryForm">
+            <select formControlName="country" (change)="changeCountry()">
+                <option 
+                    *ngFor="let country of countriesList;" 
+                    [value]="country.code"
+                >{{ country.name }}</option>
+            </select>
+        </form>
+    </header>
+
+    <app-loader *ngIf="isLoading; else loaded"></app-loader>
+
+    <ng-template #loaded>
+        <div class="error" *ngIf="error">{{ error }}</div>
+
+        <ng-container *ngIf="news; else notNews">
+            <article *ngFor="let article of news" appBackgroundColor="#ededed">
+                <h3>
+                    <a [href]="article.url" target="_blank">{{ article.title }}</a>
+                </h3>
+                <span class="author">{{ article.author }}</span>
+                <div>
+                    <p>{{ article.description }}</p>
+                    <a [href]="article.url" target="_blank">Read more...</a>
+                </div>
+            </article>
+        </ng-container>
+        
+        <ng-template #notNews>
+            Not news yet...
+        </ng-template>
+    </ng-template>
+
+    
+
+</div>
