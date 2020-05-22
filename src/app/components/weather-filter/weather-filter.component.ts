@@ -16,9 +16,9 @@ export class WeatherFilterComponent implements OnInit {
 
   @Output() onResetFilter = new EventEmitter<boolean>();
 
-  @Input() min;
+  @Input() min: string;
 
-  @Input() max;
+  @Input() max: string;
 
   constructor() { }
 
